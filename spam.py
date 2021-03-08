@@ -23,8 +23,8 @@ to_addr=receiver
 for i in range(100):
     content = "你知道這是我傳的第"+str(i+1)+"封嗎？"
     msg = MIMEText(content, 'plain', 'utf-8')
-    msg['From'] = Header(sender, 'utf-8')
-    msg['To'] =  Header(receiver, 'utf-8')
+    msg['From'] = Header(from_addr, 'utf-8')
+    msg['To'] =  Header(to_addr, 'utf-8')
     subject = "你知道這是我傳的第"+str(i+1)+"封嗎？" 
     msg['Subject'] = Header(subject, 'utf-8')
 
