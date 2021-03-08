@@ -22,8 +22,8 @@ to_addr=receiver
 
 #內文設定
 msg = MIMEText(sendtext, 'plain', 'utf-8')
-msg['From'] = Header(sender, 'utf-8')
-msg['To'] =  Header(receiver, 'utf-8')
+msg['From'] = Header(from_addr, 'utf-8')
+msg['To'] =  Header(to_addr, 'utf-8')
 
 
 msg['Subject'] = Header(subject, 'utf-8')
