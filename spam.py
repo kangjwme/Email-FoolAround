@@ -19,7 +19,7 @@ smtp.login(sender,senderpasswd)
 from_addr=sender
 to_addr=receiver
 
-#內文設定(預設100封)
+#內文設定
 for i in range(100):
     content = "你知道這是我傳的第"+str(i+1)+"封嗎？"
     msg = MIMEText(content, 'plain', 'utf-8')
@@ -31,7 +31,7 @@ for i in range(100):
     status=smtp.sendmail(from_addr, to_addr, msg.as_string())#加密文件，避免私密信息被截取
 
     if status=={}:
-        print("郵件傳送成功!")
+        print("郵件第"+str(i+1)+"傳送成功!")
     else:
         print("郵件傳送失敗!")
     time.sleep(10)
